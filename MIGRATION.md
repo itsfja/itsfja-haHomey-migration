@@ -25,7 +25,7 @@
 
 Your Homey already has all the house **zones built** (Living Room, Kitchen, Master Bedroom, Attic, Garden Shed…) and zero flows. Good. Clean slate.
 
-> ⚠️ **Read this first:** you own a **Homey Bridge**. The Bridge is a cloud-driven companion — no local Ethernet, limited apps, and it needs a Homey Premium subscription. Almost everything below assumes (or begs for) a **Homey Pro (Early 2023)**. If you're serious about migrating, buy the Pro and keep the Bridge as a 433 MHz sidekick. That is the single most important decision in this book.
+> ⚠️ **Read this first — your hosted Homey + Bridge combo, honestly assessed.** Your **hosted (Cloud) Homey** is the brain, running in Athom's datacentre. Your **Bridge** gives it local radios (Zigbee, Z-Wave, 433 MHz, IR, Bluetooth) — but everything runs in the cloud, needs Homey Premium, and stops when the broadband stops. The killer for this migration: the apps it all depends on are **Pro-only** — Octopus Energy, Tesla Energy (Powerwall), ESPHome, UniFi Protect and Arlo Connect all carry the [Pro] tag in the Homey app store. Cloud + Bridge **is enough to pilot** (Sonos, Shelly, TVs, myVaillant all work) — it is **not enough to move house**. Buy a **Homey Pro (Early 2023)**, keep the Bridge as a 433 MHz sidekick, and pilot on the hosted Homey while you wait for delivery. That is the single most important decision in this book.
 
 ---
 
