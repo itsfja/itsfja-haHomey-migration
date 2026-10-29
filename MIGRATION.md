@@ -33,7 +33,7 @@ Your Homey already has all the house **zones built** (Living Room, Kitchen, Mast
 
 **Radio extender: your existing Homey Bridge** — moves out of the garage to a central spot in the house and pairs to the mini in **Satellite Mode**, supplying the radios the mini lacks: **Z-Wave, Bluetooth LE, 433 MHz and Infrared**.
 
-**Retiring: the hosted (cloud) Homey** — it was the taster; it steps aside when the mini arrives.
+**Retiring: the hosted (cloud) Homey and its Homey Premium subscription** — it was the taster; it steps aside when the mini arrives. The Pro line has **no subscription at all**: unlimited devices, free remote access, free app store, free local backups (an optional 99p cloud backup exists — ignore it, you have a homelab). But there is an order of operations: see Step 21 before you cancel anything.
 
 **Demoted, not deleted: Home Assistant** — HA stops being "the house" and becomes "the playpen": ESPHome voice stack, ESPresense/Bermuda, Node-RED, server monitoring, Matter/Thread border-router duty, UniFi telemetry. It can crash freely without the kettle noticing.
 
@@ -67,7 +67,7 @@ Your Homey already has all the house **zones built** (Living Room, Kitchen, Mast
 - Mini goes in the homelab: Ethernet in, power in, adopt it in the Homey app, log in with your existing Athom account. It inherits your zones automatically.
 - **App budget check, once, out loud:** the mini is happy at ~20–25 apps. Your list (Sonos, Shelly, Tuya, LG, Samsung, Apple TV, Xbox, Tesla Energy, Octopus, myVaillant, UniFi Protect, Arlo, ESPHome, Homey Smartphone) ≈ **14–15**. Fits, with modest headroom. Every future app must earn its RAM.
 - The **Bridge move**: pick a central, open spot — hallway shelf, landing, top of a bookcase. Wi-Fi only (no Ethernet port on the Bridge), so pick somewhere with solid wireless. Never inside a metal cabinet, never behind a TV, never in foil-backed plasterboard.
-- After it boots in the new spot: in the Homey app, pair the Bridge to the mini (Satellite Mode). Its radios now belong to the mini.
+- After it boots in the new spot: **reset the Bridge** (it must leave the hosted Homey first), then pair it to the mini in **Satellite Mode**. Its radios now belong to the mini.
 
 ---
 
@@ -201,6 +201,16 @@ Your Homey already has all the house **zones built** (Living Room, Kitchen, Mast
 ### Step 20 — Freeze the house, keep the lab
 - Turn off HA's two automations. Leave HA running as the safety net for a month.
 - When nothing has broken: HA is no longer "the house", it is "the lab" — and that is its permanent job description (Book Five).
+
+### Step 21 — Cancel the subscription (in the right order)
+The money step. **£209.99 once, then £0 a month.** The Pro line has no subscription at all — unlimited devices, free remote access, free local backups. But do it in this order or you'll break the Bridge:
+
+1. Mini arrives and is adopted. ✅ (Step 5)
+2. Bridge moves centrally, gets **reset**, and pairs to the mini in **Satellite Mode**. ✅ (Step 5)
+3. Your devices all respond through the mini. ✅ (Books Two and Three)
+4. **Now** cancel Homey Premium in your Athom account settings.
+- **Why the order matters:** while the Bridge is still paired to the hosted Homey, the subscription is what keeps it alive. And the Bridge must be reset before it will leave the hosted Homey and join the mini — Athom's own setup guide says so.
+- **Satellite Mode gotcha (know it, don't fear it):** the Bridge talks to the mini over your LAN, but it needs internet at startup to authenticate. If the broadband drops, the mini keeps running your Zigbee/Ethernet devices — but Flows that need the Bridge's Z-Wave, IR, 433 MHz or BLE devices pause until the internet returns. If that ever annoys you, the Homey Pro (2026) with all radios in one box is the fix.
 
 ---
 
