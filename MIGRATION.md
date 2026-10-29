@@ -29,7 +29,7 @@ Your Homey already has all the house **zones built** (Living Room, Kitchen, Mast
 
 ## 🏗️ The Plan of Record
 
-**Production hub: Homey Pro mini** — runs the full Homey Pro OS locally, with Zigbee, Thread, Matter and **gigabit Ethernet built in** (£199 new). It lives in the homelab, on a cable.
+**Production hub: Homey Pro mini** — runs the full Homey Pro OS locally, with Zigbee, Thread, Matter and **gigabit Ethernet built in**. Buy from **SmartHomeShopUK at £209.99** (in stock, fast UK dispatch, free shipping over £100). Official RRP is now £249 — Athom raised prices on 1 June 2026, so £199 is history; £209.99 is the cheapest new UK price going. It lives in the homelab, on a cable.
 
 **Radio extender: your existing Homey Bridge** — moves out of the garage to a central spot in the house and pairs to the mini in **Satellite Mode**, supplying the radios the mini lacks: **Z-Wave, Bluetooth LE, 433 MHz and Infrared**.
 
@@ -37,7 +37,7 @@ Your Homey already has all the house **zones built** (Living Room, Kitchen, Mast
 
 **Demoted, not deleted: Home Assistant** — HA stops being "the house" and becomes "the playpen": ESPHome voice stack, ESPresense/Bermuda, Node-RED, server monitoring, Matter/Thread border-router duty, UniFi telemetry. It can crash freely without the kettle noticing.
 
-**Alternative worth one bid:** a used **Homey Pro (Early 2023)** (~£200–300 at auction; don't chase past ~£250) does everything in one box — all radios built in, 2 GB RAM (60+ apps vs the mini's ~20–25). But no built-in Ethernet (needs the £29 adapter) and 2023-era radios. If the mini's app ceiling and the Bridge-in-the-chain bother you, it's the fallback.
+**Alternative worth one bid:** a used **Homey Pro (Early 2023)** (~£200–300 at auction; don't chase past ~£250) does everything in one box — all radios built in, 2 GB RAM (60+ apps vs the mini's ~20–25). But no built-in Ethernet (needs the £29 adapter) and 2023-era radios. Note there is now also a Homey Pro (2026) at ~£426–449 with 4 GB RAM — the true successor, if you ever outgrow the mini.
 
 ---
 
@@ -58,7 +58,7 @@ Your Homey already has all the house **zones built** (Living Room, Kitchen, Mast
 - Do this now, before the Bridge moves, before anything else changes. It costs 10 minutes today and saves a wasted trip up a ladder later.
 
 ### Step 4 — Buy the hardware (and two cheap helpers)
-1. **Homey Pro mini** — from homey.app or Amazon UK (~£199).
+1. **Homey Pro mini** — from SmartHomeShopUK (~£209.99, quick UK dispatch; they've served Francis well before). Order it first — everything else can wait for the postman.
 2. **A USB power bank** — any one with a USB-C output. This is the ladder-avoidance tool (see the Ceiling & Wall Survival Guide).
 3. **A cheap plug-in desk lamp** — this is the second ladder-avoidance tool.
 4. Short Ethernet cable to the mini; a spare mains socket near the centre of the house for the Bridge.
