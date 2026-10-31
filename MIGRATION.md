@@ -67,7 +67,23 @@ Your Homey already has all the house **zones built** (Living Room, Kitchen, Mast
 - Mini goes in the homelab: Ethernet in, power in, adopt it in the Homey app, log in with your existing Athom account. It inherits your zones automatically.
 - **App budget check, once, out loud:** the mini is happy at ~20–25 apps. Your list (Sonos, Shelly, Tuya, LG, Samsung, Apple TV, Xbox, Tesla Energy, Octopus, myVaillant, UniFi Protect, Arlo, ESPHome, Homey Smartphone) ≈ **14–15**. Fits, with modest headroom. Every future app must earn its RAM.
 - The **Bridge move**: pick a central, open spot — hallway shelf, landing, top of a bookcase. Wi-Fi only (no Ethernet port on the Bridge), so pick somewhere with solid wireless. Never inside a metal cabinet, never behind a TV, never in foil-backed plasterboard.
-- After it boots in the new spot: **reset the Bridge** (it must leave the hosted Homey first), then pair it to the mini in **Satellite Mode**. Its radios now belong to the mini.
+
+### Step 5½ — Disassociating the Bridge (the idiot's guide)
+Do this only **after the mini is adopted** — until then the Bridge is still working for your hosted Homey, and there's nothing to back up first (the Bridge itself stores only Wi-Fi settings; all its config lived in the hosted Homey).
+
+1. Open the Homey app on your phone. Tap the Homey name at the top and make sure you're on your **current (hosted) Homey** — the one the Bridge is paired to. This is the step people get wrong.
+2. Go to the **Devices** tab.
+3. Find **Homey Bridge** (it's in the Garage zone). **Long-press** its icon.
+4. Tap the **gear icon** → **Remove Device** → confirm.
+5. The Bridge now wipes itself — Wi-Fi credentials, Zigbee and Z-Wave network data all go. It restarts, and after a few seconds the LED ring **pulses blue**: that means "ready for a new owner". (This is Athom's official reset — there's no button-and-paperclip routine.)
+6. **Move it now** to its new central home (if you haven't already) and give it power.
+7. In the Homey app, tap the Homey name at the top and **switch to your Homey Pro mini**.
+8. **Devices → + (top right) → New Device**. The mini searches and finds the Bridge within seconds: tap **Connect Homey Bridge**, follow the wizard, re-enter your Wi-Fi password when asked.
+9. Confirm the Bridge now appears under the mini's Devices. Switch back to the hosted Homey: the Bridge is gone from its list. Divorced, remarried, done.
+
+**If it won't pulse blue:** unplug the power, count to ten, plug it back in. A Bridge that can't find its stored Wi-Fi goes into setup mode on its own — but the app-based Remove Device in step 4 is the clean way, because it also unregisters it from the old Homey.
+
+**Reminder:** do not cancel Homey Premium until this step and Step 21's checklist are complete — the subscription is keeping the hosted Homey alive while it still owns the Bridge.
 
 ---
 
@@ -206,7 +222,7 @@ Your Homey already has all the house **zones built** (Living Room, Kitchen, Mast
 The money step. **£209.99 once, then £0 a month.** The Pro line has no subscription at all — unlimited devices, free remote access, free local backups. But do it in this order or you'll break the Bridge:
 
 1. Mini arrives and is adopted. ✅ (Step 5)
-2. Bridge moves centrally, gets **reset**, and pairs to the mini in **Satellite Mode**. ✅ (Step 5)
+2. Bridge moves centrally, gets **reset**, and pairs to the mini in **Satellite Mode**. ✅ (Step 5½)
 3. Your devices all respond through the mini. ✅ (Books Two and Three)
 4. **Now** cancel Homey Premium in your Athom account settings.
 - **Why the order matters:** while the Bridge is still paired to the hosted Homey, the subscription is what keeps it alive. And the Bridge must be reset before it will leave the hosted Homey and join the mini — Athom's own setup guide says so.
