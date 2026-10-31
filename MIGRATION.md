@@ -63,11 +63,15 @@ Your Homey already has all the house **zones built** (Living Room, Kitchen, Mast
 3. **A cheap plug-in desk lamp** — this is the second ladder-avoidance tool.
 4. Short Ethernet cable to the mini; a spare mains socket near the centre of the house for the Bridge.
 
-### Step 5 — Wire in the mini, then plan the Bridge move
-- Mini goes in the homelab: Ethernet in, power in, adopt it in the Homey app, log in with your existing Athom account. It inherits your zones automatically.
+### Step 5 — Adopt the mini (the 5-minute welcome party)
+1. **Prereq on your phone:** Bluetooth ON, and the Homey app has permission to detect nearby devices (iOS: "Bluetooth"; Android: "Nearby devices"). The app needs this to find the mini.
+2. **Cable it up:** Ethernet from the mini into your switch/router (the mini **cannot** use Wi-Fi — Ethernet is mandatory), then USB-C power into the wall.
+3. **Watch the LED:** it blinks white while booting, and after a minute or two **breathes blue** — "ready for setup".
+4. **In the Homey app** (existing account, same app as always): Home tab → **tap your avatar → My Homeys → Add New Homey → Homey Pro mini** → follow the wizard (location, name). Done. It appears in the Homey switcher at the top of the app next to the hosted Homey.
+5. **If the LED never breathes blue after ~2 minutes:** factory-reset the mini and try again.
+- **Rebuild the zones (10 minutes, do it now):** zones belong to each individual Homey — the 19 zones you built live on the hosted Homey and do **not** carry over. Recreate them on the mini (Living Room, Kitchen, Master Bedroom, Attic, Garden Shed…) before adding devices, so everything gets zoned correctly on day one.
 - **App budget check, once, out loud:** the mini is happy at ~20–25 apps. Your list (Sonos, Shelly, Tuya, LG, Samsung, Apple TV, Xbox, Tesla Energy, Octopus, myVaillant, UniFi Protect, Arlo, ESPHome, Homey Smartphone) ≈ **14–15**. Fits, with modest headroom. Every future app must earn its RAM.
 - The **Bridge move**: pick a central, open spot — hallway shelf, landing, top of a bookcase. Wi-Fi only (no Ethernet port on the Bridge), so pick somewhere with solid wireless. Never inside a metal cabinet, never behind a TV, never in foil-backed plasterboard.
-
 ### Step 5½ — Disassociating the Bridge (the idiot's guide)
 Do this only **after the mini is adopted** — until then the Bridge is still working for your hosted Homey, and there's nothing to back up first (the Bridge itself stores only Wi-Fi settings; all its config lived in the hosted Homey).
 
